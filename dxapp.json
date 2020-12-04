@@ -15,8 +15,82 @@
       "name": "gene_model",
       "label": "gene_model",
       "class": "file",
-      "patterns": ["*.gtf"],
+      "patterns": ["*.gtf", "*.gtf.gz", "*.gtf.bz2"],
       "optional": false
+    },
+    {
+      "name": "order",
+      "label": "Read ordering",
+      "class": "string",
+      "choices": ["name", "pos"],
+      "default": "name"
+    },
+    {
+      "name": "strand",
+      "label": "Read strandedness",
+      "class": "string",
+      "choices": ["yes", "no", "reverse"],
+      "default": "yes"
+    },
+    {
+      "name": "feature_type",
+      "label": "Feature type to use from GTF file",
+      "class": "string",
+      "choices": ["exon", "gene", "transcript", "CDS", "start_codon", "stop_codon", "UTR", "Selenocysteine"],
+      "default": "exon"
+    },
+    {
+      "name": "id_attribute",
+      "label": "GTF attribute to use as ID",
+      "class": "string",
+      "choices": ["gene_id", "gene_name", "transcript_id", "transcript_name"]
+    },
+    {
+      "name": "additional_attr",
+      "label": "Additional feature attributes",
+      "class": "string",
+      "optional": true,
+      "choices": ["gene_id", "gene_name", "transcript_id", "transcript_name"]
+    },
+    {
+      "name": "mode",
+      "label": "Mode to handle overlapping reads",
+      "class": "string",
+      "choices": ["union", "intersection-strict", "intersection-empty"],
+      "default": "union"
+    },
+    {
+      "name": "nonunique",
+      "label": "Mode for non-unique reads",
+      "class": "string",
+      "choices": ["none", "all"],
+      "default": "none"
+    },
+    {
+      "name": "secondary_alignments",
+      "label": "Mode for secondary alignments",
+      "class": "string",
+      "choices": ["score", "ignore"],
+      "default": "score"
+    },
+    {
+      "name": "supplementary_alignments",
+      "label": "Mode for supplementary alignments",
+      "class": "string",
+      "choices": ["score", "ignore"],
+      "default": "score"
+    },
+    {
+      "name": "samout",
+      "label": "Name for SAM output file",
+      "class": "string",
+      "optional": true
+    },
+    {
+      "name": "minqual",
+      "label": "Minimum MAPQ alignment quality",
+      "class": "int",
+      "default": 10
     }
   ],
   "outputSpec": [
