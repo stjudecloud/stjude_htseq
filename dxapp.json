@@ -1,0 +1,72 @@
+{
+  "name": "stjude_htseq",
+  "title": "HTSeq (St. Jude)",
+  "summary": "HTSeq",
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "bam_file",
+      "label": "bam_file",
+      "class": "file",
+      "patterns": ["*.bam"],
+      "optional": false
+    },
+    {
+      "name": "gene_model",
+      "label": "gene_model",
+      "class": "file",
+      "patterns": ["*.gtf"],
+      "optional": false
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "htseq_counts",
+      "label": "htseq_counts",
+      "class": "file"
+    }
+  ],
+  "runSpec": {
+    "execDepends": [
+      {
+        "name": "samtools"
+      },
+      {
+        "name": "build-essential"
+      },
+      {
+        "name": "python2.7-dev"
+      },
+      {
+        "name": "python-numpy"
+      },
+      {
+        "name": "python-matplotlib"
+      }
+    ],
+    "bundledDependsByRegion": {
+      "aws:us-east-1": [
+        {
+          "name": "resources.tar.gz",
+          "id": {
+            "$dnanexus_link": "file-ByJvjv00vzzv4gy3q1PB6B68"
+          }
+        }
+      ]
+    },
+    "systemRequirements": {
+      "*": {
+        "instanceType": "azure:mem2_ssd1_x8"
+      }
+    },
+    "file": "src/code.sh",
+    "release": "14.04",
+    "interpreter": "bash",
+    "distribution": "Ubuntu"
+  },
+  "access": {
+    "network": [
+      "*"
+    ]
+  }
+}
