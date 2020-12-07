@@ -3,6 +3,14 @@
   "title": "HTSeq count (St. Jude)",
   "summary": "HTSeq",
   "dxapi": "1.0.0",
+  "developers": [
+    "user-athrashe",
+    "user-afrantz"
+  ],
+  "authorizedUsers": [
+    "org-stjude_cloud_app_runners",
+    "org-stjude_cloud"
+  ],
   "inputSpec": [
     {
       "name": "bam_file",
