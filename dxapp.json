@@ -1,6 +1,6 @@
 {
-  "name": "stjude_htseq",
-  "title": "HTSeq (St. Jude)",
+  "name": "stjude_htseq_count",
+  "title": "HTSeq count (St. Jude)",
   "summary": "HTSeq",
   "dxapi": "1.0.0",
   "inputSpec": [
