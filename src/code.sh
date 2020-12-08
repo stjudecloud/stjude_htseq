@@ -31,7 +31,7 @@ main() {
         additional_arg=(--additional-attr="${additional_attr}")
     fi
 
-    htseq-count -r "${order}" -i "${id_attribute}" -s "${strand}" \
+    htseq-count -f bam -r "${order}" -i "${id_attribute}" -s "${strand}" \
         -t "${feature_type}" -m "${mode}" --nonunique="${nonunique}" \
         --secondary-alignments="${secondary_alignments}" \
         --supplementary-alignments="${supplementary_alignments}" \
