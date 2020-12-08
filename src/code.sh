@@ -31,9 +31,9 @@ main() {
         additional_arg=(--additional-attr="${additional_attr}")
     fi
 
-    htseq-count -f bam -r "${order}" -i "${id_attribute}" -s "${strand}" \
+    htseq-count -r "${order}" -i "${id_attribute}" -s "${strand}" \
         -t "${feature_type}" -m "${mode}" --nonunique="${nonunique}" \
-        --secondary-alignments="${secondary_alignments}" -n "$(nproc)" \
+        --secondary-alignments="${secondary_alignments}" \
         --supplementary-alignments="${supplementary_alignments}" \
         "${additional_arg[@]}" "${out_arg[@]}" "$bam" "$gtf" \
         > "$counts"
